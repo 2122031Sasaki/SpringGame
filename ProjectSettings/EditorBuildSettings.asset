@@ -4,6 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+
   m_Scenes:
   - enabled: 1
     path: Assets/yamaryo/gamescene.unity
@@ -11,4 +12,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/yamaryo/resultscene.unity
     guid: 2014ae496d909de4198a5915c9eaa26e
+
   m_configObjects: {}
