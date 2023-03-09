@@ -4,13 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-
   m_Scenes:
   - enabled: 1
-    path: Assets/yamaryo/gamescene.unity
-    guid: cfa069662bfbe84479341aabba61f45e
+    path: Assets/Umebara/Uselect.unity
+    guid: d341c6b9b54e52746b7c38ddd0713c31
   - enabled: 1
-    path: Assets/yamaryo/resultscene.unity
-    guid: 2014ae496d909de4198a5915c9eaa26e
-
+    path: Assets/Umebara/Ustart.unity
+    guid: d1798d355bfb1c54e936acfae461a71c
   m_configObjects: {}
