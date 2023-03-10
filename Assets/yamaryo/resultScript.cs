@@ -19,7 +19,7 @@ public class resultScript : MonoBehaviour
         time = timeScript.gettime();
         resulttimeText.text = "Time:" + time.ToString("F2");
 
-        besttime = PlayerPrefs.GetFloat("BESTTIME", 100);
+        besttime = PlayerPrefs.GetFloat("BESTTIME01", 100);
        
     }
 
@@ -31,7 +31,7 @@ public class resultScript : MonoBehaviour
         if (besttime > time)
         {
             besttime = time;
-            PlayerPrefs.SetFloat("BESTTIME", besttime);
+            PlayerPrefs.SetFloat("BESTTIME01", besttime);
             PlayerPrefs.Save();
         }
     }
