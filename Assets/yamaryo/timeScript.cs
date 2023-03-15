@@ -28,4 +28,10 @@ public class timeScript : MonoBehaviour
         return time;
     }
 
+    public float Addtime()
+    {
+        time = time + 5f;
+        return time;
+    }
+
 }
