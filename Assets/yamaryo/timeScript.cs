@@ -7,8 +7,6 @@ public class timeScript : MonoBehaviour
 {
     public static float time;
 
-    
-
     public Text timeText;
 
     // Start is called before the first frame update
@@ -27,6 +25,12 @@ public class timeScript : MonoBehaviour
 
     public static float gettime()
     {
+        return time;
+    }
+
+    public float Addtime()
+    {
+        time = time + 5f;
         return time;
     }
 
