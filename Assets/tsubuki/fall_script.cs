@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class fall_script : MonoBehaviour
 {
-    Transform myTransform = this.gameObject.GetComponent<Transform>();
-    Vector3 pos;
+    GameObject beforePos1;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.beforePos1 = GameObject.Find("beforePos1");
     }
 
     // Update is called once per frame
@@ -22,14 +21,11 @@ public class NewBehaviourScript : MonoBehaviour
     // 落下判定＆コースへの再配置
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "beforePos")
+        if(other.gameObject.name == "fallJudge1")
         {
-            pos = myTransform.position;
-        }
-
-        if(other.gameObject.name == "fallJudge")
-        {
-            myTransform.position = pos;
+            Vector3 pos = this.beforePos1.transform.position;
+            pos.y += 5.0f;
+            gameObject.transform.position = pos;
         }
     }
 }
