@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ƒvƒŒƒCƒ„[‚Ì‘€ì
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0f, 0f, speed);
@@ -36,14 +37,16 @@ public class Player : MonoBehaviour
         {
             transform.Translate(speed, 0f, 0f);
         }
+        //‚±‚±‚Ü‚Å
 
+        //ÚG‚µ‚½‚çtime•bŒã‚ÉÁ‚¦‚é
         if (isTouched)
         {
-            time -= Time.deltaTime;
-            if (time <= 0)
-            {
+            //time -= Time.deltaTime;
+            //if (time <= 0)
+            //{
                 Destroy(destroyObj);
-            }
+            //}
         }
     }
 
