@@ -23,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ayaka/ResultScene.unity
     guid: 7db2610879ef52d479d11a764e6883a1
+  - enabled: 1
+    path: Assets/Game/NewGameScene.unity
+    guid: 4c8e558cce3f14342bd8551b127580c3
+  - enabled: 1
+    path: Assets/Game/NewResultScene.unity
+    guid: 623ad480905fff24aab1b6ccca46741d
+  - enabled: 1
+    path: Assets/Game/NewSelectScene.unity
+    guid: baf84855f8ef7894386f9dbead767be4
+  - enabled: 1
+    path: Assets/Game/NewStartScene.unity
+    guid: eaf5775379039134ba091da48ec6b062
   m_configObjects: {}
