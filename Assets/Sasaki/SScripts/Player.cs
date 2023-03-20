@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Sphere")
+        if (other.gameObject.name == "Sphere(Clone)")
         {
             StartCoroutine("SpeedUp");
             destroyObj = other.gameObject;
