@@ -31,6 +31,6 @@ public class NewSelectScript : MonoBehaviour
     {
         //”Ô†‚ğ‹L‰¯‚³‚¹‚é
         PlayerPrefs.SetInt("CHARA_NUMBER", selectCharaNumber);
-        SceneManager.LoadScene("NewGameScene");
+        SceneManager.LoadScene("NumachiScene");
     }
 }

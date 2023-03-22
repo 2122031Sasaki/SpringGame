@@ -13,11 +13,11 @@ public class Appearancescript : MonoBehaviour
         Debug.Log(selectCharaNumber);
         if (selectCharaNumber == 0)
         {
-            Instantiate(Player_speed, new Vector3(114.0f, 0f, -3.6f), Quaternion.identity);
+            Instantiate(Player_speed, new Vector3(1010.0f, 560f, 1502.0f), Quaternion.Euler(0, 90.0f, 0));
         }
         if(selectCharaNumber == 1)
         {
-            Instantiate(Player_turn, new Vector3(114.0f, 0f, -3.6f), Quaternion.identity);
+            Instantiate(Player_turn, new Vector3(1010.0f, 546f, 1502.0f), Quaternion.Euler(0, 0.0f, 0));
         }
         PlayerPrefs.DeleteKey("CHARA_NUMBER");
 
