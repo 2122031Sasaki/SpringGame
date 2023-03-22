@@ -22,9 +22,9 @@ public class SpeedPlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Speed = 10.0f;
-        Turn = 1.0f;
-        Brake = -3.0f;
-        DownSpeed = -5.0f;
+        Turn = 0.5f;
+        DownSpeed = -1.0f;
+        Brake = -5.0f;
         SpeedUpTime = 3.0f;
         MaxSpeed = 20.0f;
         Key = 1.0f;
@@ -41,21 +41,21 @@ public class SpeedPlayerController : MonoBehaviour
         //    GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key , ForceMode.Force);
         //}
 
-        if (Input.GetKey(KeyCode.A))//Aで右に曲がる,Turnの軸と数値は要調整,BreakはTurnPlayerに比べ重めに設定
+        if (Input.GetKey(KeyCode.A))//Aで右に曲がる,Turnの軸と数値は要調整,DownSpeedはTurnPlayerに比べ重めに設定
         {
             transform.Rotate(0, -Turn, 0);
-            GetComponent<Rigidbody>().AddForce(transform.forward * Brake, ForceMode.Force);
+            GetComponent<Rigidbody>().AddForce(transform.forward * DownSpeed, ForceMode.Force);
         }
 
-        if (Input.GetKey(KeyCode.D))//Dで左に曲がる,Turnの軸と数値は要調整,BreakはTurnPlayerに比べ重めに設定
+        if (Input.GetKey(KeyCode.D))//Dで左に曲がる,Turnの軸と数値は要調整,DownSpeedはTurnPlayerに比べ重めに設定
         {
             transform.Rotate(0, Turn, 0);        
-            GetComponent<Rigidbody>().AddForce(transform.forward * Brake, ForceMode.Force);
+            GetComponent<Rigidbody>().AddForce(transform.forward * DownSpeed, ForceMode.Force);
         }
 
         if (Input.GetKey(KeyCode.S))//Sでブレーキ,急制動ができるよう強めに設定
         {
-            GetComponent<Rigidbody>().AddForce(transform.forward * DownSpeed, ForceMode.Force);
+            GetComponent<Rigidbody>().AddForce(transform.forward * Brake, ForceMode.Force);
         }
         float speedx = Mathf.Abs(rb.velocity.x);
         float speedy = Mathf.Abs(rb.velocity.y);
