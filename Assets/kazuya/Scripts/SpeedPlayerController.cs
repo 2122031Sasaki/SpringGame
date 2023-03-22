@@ -10,32 +10,36 @@ public class SpeedPlayerController : MonoBehaviour
     private float Brake;
     private float DownSpeed;
     private float SpeedUpTime;
+    private float MaxSpeed;
+    private float Key;
 
     void FixedUpdate()
     {
         Rigidbody rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
     }
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Speed = 3.0f;
-        Turn = 0.5f;
-        Brake = -1.5f;
-        DownSpeed = -10.0f;
-        SpeedUpTime = 1.0f;
+        Speed = 10.0f;
+        Turn = 1.0f;
+        Brake = -3.0f;
+        DownSpeed = -5.0f;
+        SpeedUpTime = 3.0f;
+        MaxSpeed = 20.0f;
+        Key = 1.0f;
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
         //青軸が向いている方向を前として、AddForceで毎フレームずつ慣性をかけ続けている
-        GetComponent<Rigidbody>().AddForce(transform.forward * 4.0f, ForceMode.Force);
-        
-        if (Input.GetKey(KeyCode.W))//Wで加速
-        {
-            GetComponent<Rigidbody>().AddForce(transform.forward * Speed, ForceMode.Force);
-        }
+        GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
+
+        //if (Input.GetKey(KeyCode.W))//Wで加速
+        //{
+        //    GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key , ForceMode.Force);
+        //}
 
         if (Input.GetKey(KeyCode.A))//Aで右に曲がる,Turnの軸と数値は要調整,BreakはTurnPlayerに比べ重めに設定
         {
@@ -45,20 +49,31 @@ public class SpeedPlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))//Dで左に曲がる,Turnの軸と数値は要調整,BreakはTurnPlayerに比べ重めに設定
         {
-            transform.Rotate(0, Turn, 0);
+            transform.Rotate(0, Turn, 0);        
             GetComponent<Rigidbody>().AddForce(transform.forward * Brake, ForceMode.Force);
         }
 
-        if(Input.GetKey(KeyCode.S))//Sでブレーキ,急制動ができるよう強めに設定
+        if (Input.GetKey(KeyCode.S))//Sでブレーキ,急制動ができるよう強めに設定
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * DownSpeed, ForceMode.Force);
+        }
+        float speedx = Mathf.Abs(rb.velocity.x);
+        float speedy = Mathf.Abs(rb.velocity.y);
+        float speedz = Mathf.Abs(rb.velocity.z);
+        if (speedx > MaxSpeed || speedy > MaxSpeed || speedz > MaxSpeed)
+        {
+            Key = 0.0f;
+        }
+        else
+        {
+            Key = 1.0f;
         }
 
     }
     //佐崎さんから頂いた加速用のスクリプト
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "SpeedUpBoard"  || other.gameObject.name == "SpeedUpWall")
+        if (other.gameObject.name == "SpeedUpBoard" || other.gameObject.name == "SpeedUpWall")
         {
             StartCoroutine("SpeedUp");
         }
@@ -66,9 +81,9 @@ public class SpeedPlayerController : MonoBehaviour
 
     IEnumerator SpeedUp()
     {
-        Speed = Speed * 1.5f;
+        MaxSpeed = MaxSpeed * 1.5f;
         yield return new WaitForSeconds(SpeedUpTime);
-        Speed = 3.0f;
+        MaxSpeed = MaxSpeed / 1.5f;
     }
 }
 
