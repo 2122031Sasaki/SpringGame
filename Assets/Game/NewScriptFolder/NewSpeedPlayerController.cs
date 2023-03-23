@@ -32,6 +32,7 @@ public class NewSpeedPlayerController : MonoBehaviour
         LowSpeed = -5.0f;
         Key = 1.0f;
         Rha = true;
+        Application.targetFrameRate = 120;
     }
 
     // Update is called once per frame
@@ -65,6 +66,10 @@ public class NewSpeedPlayerController : MonoBehaviour
         float speedy = Mathf.Abs(rb.velocity.y);
         float speedz = Mathf.Abs(rb.velocity.z);
         if (speedx > MaxSpeed || speedy > MaxSpeed || speedz > MaxSpeed)
+        {
+            Key = 0.0f;
+        }
+        else if (speedx < LowSpeed || speedy < LowSpeed || speedz < LowSpeed)
         {
             Key = 0.0f;
         }
