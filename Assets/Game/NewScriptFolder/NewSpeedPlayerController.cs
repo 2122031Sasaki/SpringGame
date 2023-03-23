@@ -88,7 +88,7 @@ public class NewSpeedPlayerController : MonoBehaviour
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
-        if (localAngle.x < -45 && Rha == false)
+        if (localAngle.x < -30 && Rha == false)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
@@ -111,7 +111,7 @@ public class NewSpeedPlayerController : MonoBehaviour
         }
         if (Rha == false)
         {
-            Physics.gravity = new Vector3(0, -20, 0);
+            Physics.gravity = new Vector3(0, -12, 0);
         }
         if (Rha == true)
         {
