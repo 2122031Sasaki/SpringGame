@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4246830386477976360}
   - component: {fileID: 954796282870088845}
   - component: {fileID: 3072837448381050951}
+  - component: {fileID: 2985516351965610734}
   m_Layer: 0
   m_Name: Game_kamakura
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2985516351965610734
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577007165823160722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.032490518, y: 0.033136655, z: 0.021310413}
+  m_Center: {x: 0, y: 0, z: 0.0006552086}
