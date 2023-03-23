@@ -17,7 +17,7 @@ public class NewSpeedPlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Rigidbody rb = this.GetComponent<Rigidbody>();  // rigidbody���擾
+        Rigidbody rb = this.GetComponent<Rigidbody>(); 
     }
     // Start is called before the first frame update
     void Start()
@@ -37,28 +37,27 @@ public class NewSpeedPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //���������Ă��������O�Ƃ��āAAddForce�Ŗ��t���[�������������������Ă���
         GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
 
         
-        if (Input.GetKey(KeyCode.W))//W�ŉ���
+        if (Input.GetKey(KeyCode.W))
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
         }
 
-        if (Input.GetKey(KeyCode.A))//A�ŉE�ɋȂ���,Turn�̎��Ɛ��l�͗v����,Break��TurnPlayer�ɔ�׏d�߂ɐݒ�
+        if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, -Turn, 0);
             GetComponent<Rigidbody>().AddForce(transform.forward * DownSpeed, ForceMode.Force);
         }
 
-        if (Input.GetKey(KeyCode.D))//D�ō��ɋȂ���,Turn�̎��Ɛ��l�͗v����,Break��TurnPlayer�ɔ�׏d�߂ɐݒ�
+        if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(0, Turn, 0);
             GetComponent<Rigidbody>().AddForce(transform.forward * DownSpeed, ForceMode.Force);
         }
 
-        if (Input.GetKey(KeyCode.S))//S�Ńu���[�L,�}�������ł���悤���߂ɐݒ�
+        if (Input.GetKey(KeyCode.S))
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * Brake, ForceMode.Force);
         }
@@ -126,7 +125,6 @@ public class NewSpeedPlayerController : MonoBehaviour
 
 
     }
-    //���肳�񂩂璸���������p�̃X�N���v�g
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "SpeedUpBoard" || other.gameObject.name == "SpeedUpWall")
