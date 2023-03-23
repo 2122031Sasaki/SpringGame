@@ -11,6 +11,7 @@ public class TurnPlayerController : MonoBehaviour
     private float DownSpeed;
     private float SpeedUpTime;
     private float MaxSpeed;
+    private float LowSpeed;
     private float Key;
 
 
@@ -28,6 +29,7 @@ public class TurnPlayerController : MonoBehaviour
         Brake = -5.0f;
         SpeedUpTime = 3.0f;
         MaxSpeed = 15.0f;
+        LowSpeed = -5.0f;
         Key = 1.0f;
     }
 
@@ -35,12 +37,13 @@ public class TurnPlayerController : MonoBehaviour
     void Update()
     {
         //青軸が向いている方向を前として、AddForceで毎フレームずつ慣性をかけ続けている
-        GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
+        //GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
 
-        //if (Input.GetKey(KeyCode.W))//Wで加速
-        //{
-        //    GetComponent<Rigidbody>().AddForce(transform.forward * Speed, ForceMode.Force);
-        //}
+        if (Input.GetKey(KeyCode.W) == true)//Wで加速
+        {
+            GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
+            Debug.Log(Key);
+        }
 
         if (Input.GetKey(KeyCode.A))//Aで右に曲がる,Turnの軸と数値は要調整,DownSpeedはTurnPlayerに比べ重めに設定
         {
@@ -63,6 +66,10 @@ public class TurnPlayerController : MonoBehaviour
         float speedy = Mathf.Abs(rb.velocity.y);
         float speedz = Mathf.Abs(rb.velocity.z);
         if (speedx > MaxSpeed || speedy > MaxSpeed || speedz > MaxSpeed)
+        {
+            Key = 0.0f;
+        }
+        else if (speedx < LowSpeed || speedy < LowSpeed || speedz < LowSpeed)
         {
             Key = 0.0f;
         }
