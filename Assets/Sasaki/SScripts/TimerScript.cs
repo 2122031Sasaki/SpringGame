@@ -38,7 +38,7 @@ public class TimerScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Cube(Clone)")
+        if (other.gameObject.name == "Game_star(Clone)")
         {
             StartCoroutine("Muteki");
             destroyObj = other.gameObject;
@@ -46,7 +46,27 @@ public class TimerScript : MonoBehaviour
             Destroy(destroyObj);
         }
 
-        if (other.gameObject.name == "Cylinder(Clone)")
+        if (other.gameObject.name == "Game_koori(Clone)")
+        {
+            destroyObj = other.gameObject;
+            if (tf == false)
+            {
+                isTouched = true;
+            }
+            Destroy(destroyObj);
+        }
+
+        if (other.gameObject.name == "Game_kamakura(Clone)")
+        {
+            destroyObj = other.gameObject;
+            if (tf == false)
+            {
+                isTouched = true;
+            }
+            Destroy(destroyObj);
+        }
+
+        if (other.gameObject.name == "Game_yukikaku(Clone)")
         {
             destroyObj = other.gameObject;
             if (tf == false)
