@@ -11,6 +11,7 @@ public class NewSpeedPlayerController : MonoBehaviour
     private float DownSpeed;
     private float SpeedUpTime;
     private float MaxSpeed;
+    private float LowSpeed;
     private float Key;
     bool Rha;
 
@@ -28,6 +29,7 @@ public class NewSpeedPlayerController : MonoBehaviour
         Brake = 5.0f;
         SpeedUpTime = 3.0f;
         MaxSpeed = 20.0f;
+        LowSpeed = -5.0f;
         Key = 1.0f;
         Rha = true;
     }
@@ -64,6 +66,10 @@ public class NewSpeedPlayerController : MonoBehaviour
         float speedy = Mathf.Abs(rb.velocity.y);
         float speedz = Mathf.Abs(rb.velocity.z);
         if (speedx > MaxSpeed || speedy > MaxSpeed || speedz > MaxSpeed)
+        {
+            Key = 0.0f;
+        }
+        else if (speedx < LowSpeed || speedy < LowSpeed || speedz < LowSpeed)
         {
             Key = 0.0f;
         }
