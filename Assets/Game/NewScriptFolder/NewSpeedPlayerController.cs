@@ -117,7 +117,7 @@ public class NewSpeedPlayerController : MonoBehaviour
         }
         if (Rha == false)
         {
-            Physics.gravity = new Vector3(0, -12, 0);
+            Physics.gravity = new Vector3(0, -15, 0);
         }
         if (Rha == true)
         {
