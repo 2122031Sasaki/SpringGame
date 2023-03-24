@@ -36,6 +36,8 @@ public class MakeObstacle : MonoBehaviour
         //    k = Random.Range(-4.0f, 5.0f);
         //    Instantiate(sphob, new Vector3(n, 2.0f, 28.0f), Quaternion.identity);
 
+        kori.transform.localScale = new Vector3(50.0f, 50.0f, 50.0f);
+
         Instantiate(kori, new Vector3(rn, 2.0f, 4.0f), Quaternion.identity);
 
         rn = Random.Range(-4.0f, 5.0f);
