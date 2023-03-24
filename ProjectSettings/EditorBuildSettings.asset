@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Numachi/NumachiScene.unity
     guid: 3549cbc68bb24e04ea208a11a762e221
+  - enabled: 1
+    path: Assets/Game/NewExplanationScene.unity
+    guid: 9ee03f0db57030d489a8a748accd6075
   m_configObjects: {}
