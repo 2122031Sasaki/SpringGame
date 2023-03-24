@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.48311216, g: 0.52792263, b: 0.5974373, a: 1}
+  m_IndirectSpecularColor: {r: 0.48311317, g: 0.5279229, b: 0.59743935, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -35333,6 +35333,7 @@ GameObject:
   - component: {fileID: 1997242915}
   - component: {fileID: 1997242914}
   - component: {fileID: 1997242916}
+  - component: {fileID: 1997242917}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -35383,6 +35384,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 546076826}
+--- !u!114 &1997242917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997242913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff944060f472354abdc5d01bfbb1d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kori: {fileID: 6336353235407230024, guid: d38119e616795984589619545699d02f, type: 3}
+  kamakura: {fileID: 3577007165823160722, guid: 2d5372eae1a6f4f4183b9b2c4bacea48, type: 3}
+  daruma: {fileID: 2708401584214775959, guid: 20405e3e750b6a448a612ecaf481484e, type: 3}
+  star: {fileID: 1466085893363456567, guid: 59e3615a825b36a4cb6964400531f604, type: 3}
 --- !u!4 &2001162879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3428938065774807609, guid: b2c619354d80fc94da548d78211ed649, type: 3}
