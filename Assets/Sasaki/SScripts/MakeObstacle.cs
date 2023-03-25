@@ -36,9 +36,8 @@ public class MakeObstacle : MonoBehaviour
         //    k = Random.Range(-4.0f, 5.0f);
         //    Instantiate(sphob, new Vector3(n, 2.0f, 28.0f), Quaternion.identity);
 
-        kori.transform.localScale = new Vector3(50.0f, 50.0f, 50.0f);
-
-        Instantiate(kori, new Vector3(rn, 2.0f, 4.0f), Quaternion.identity);
+        //kori.transform.localScale = new Vector3(50.0f, 50.0f, 50.0f);
+        Instantiate(kori, new Vector3(rn, 2.0f, 4.0f), Quaternion.Euler(-90, 0, 0));
 
         rn = Random.Range(-4.0f, 5.0f);
         Instantiate(kamakura, new Vector3(rn, 2.0f, 14.0f), Quaternion.identity);
@@ -48,6 +47,8 @@ public class MakeObstacle : MonoBehaviour
 
         rn = Random.Range(-4.0f, 5.0f);
         Instantiate(star, new Vector3(rn, 2.0f, 8.0f), Quaternion.identity);
+
+        Instantiate(kori, new Vector3(rn, 2.0f, 34.0f), Quaternion.Euler(-90, 0, 0));
     }
 
     // Update is called once per frame
@@ -55,4 +56,5 @@ public class MakeObstacle : MonoBehaviour
     {
         
     }
+
 }
