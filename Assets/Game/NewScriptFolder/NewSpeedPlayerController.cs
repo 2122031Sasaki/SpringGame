@@ -13,7 +13,6 @@ public class NewSpeedPlayerController : MonoBehaviour
     private float MaxSpeed;
     private float LowSpeed;
     private float Key;
-    bool Rha;
 
     void FixedUpdate()
     {
@@ -31,7 +30,6 @@ public class NewSpeedPlayerController : MonoBehaviour
         MaxSpeed = 20.0f;
         LowSpeed = -5.0f;
         Key = 1.0f;
-        Rha = true;
         Application.targetFrameRate = 120;
     }
 
@@ -77,78 +75,12 @@ public class NewSpeedPlayerController : MonoBehaviour
         {
             Key = 1.0f;
         }
-
-
-        // transformを取得
-        Transform myTransform = this.transform;
-
-        // ローカル座標を基準に、回転を取得
-        Vector3 localAngle = myTransform.localEulerAngles;
-        // 現在の角度が180より大きい場合
-        if (localAngle.x > 180)
-        {
-            // デフォルトでは角度は0～360なので-180～180となるように補正
-            localAngle.x = localAngle.x - 360;
-        }
-        if (localAngle.x < -20 && Rha == true)
-        {
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        }
-        if (localAngle.x < -30 && Rha == false)
-        {
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        }
-        if (localAngle.x < 0 && Rha == true)
-        {
-            localAngle.x += 0.05f;
-        }
-        if (localAngle.x < -20 && Rha == false)
-        {
-            localAngle.x += 0.0025f;
-        }
-
-        localAngle.z = 0.0f;
-        myTransform.localEulerAngles = localAngle; // 回転角度を設定
-  
-        if (localAngle.x >= -20 && Rha == false)
-        {
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
-        }
-        if (Rha == false)
-        {
-            Physics.gravity = new Vector3(0, -15, 0);
-        }
-        if (Rha == true)
-        {
-            Physics.gravity = new Vector3(0, -10, 0);
-        }
-
-
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "SpeedUpBoard" || other.gameObject.name == "SpeedUpWall")
         {
             StartCoroutine("SpeedUp");
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.gameObject.name == "RotetaController")
-        {
-            Rha = false;
-            Debug.Log("a");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.name == "RotetaController")
-        {
-            Rha = true;
-            Debug.Log("b");
         }
     }
 
