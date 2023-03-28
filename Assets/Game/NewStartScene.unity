@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 692187125}
   - component: {fileID: 692187124}
   - component: {fileID: 692187123}
+  - component: {fileID: 692187126}
   m_Layer: 5
   m_Name: Button(exit)
   m_TagString: Untagged
@@ -236,7 +237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -144.1}
+  m_AnchoredPosition: {x: 0, y: -157.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &692187123
@@ -282,19 +283,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 692187124}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539698927}
-        m_TargetAssemblyTypeName: NewSceneTransition, Assembly-CSharp
-        m_MethodName: NewOnClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &692187124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,6 +322,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692187121}
   m_CullTransparentMesh: 1
+--- !u!114 &692187126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692187121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: PointerEnter
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 692187121}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: PointerExit
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 692187121}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: EndGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &742106333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -602,6 +652,7 @@ GameObject:
   - component: {fileID: 1091686331}
   - component: {fileID: 1091686330}
   - component: {fileID: 1091686329}
+  - component: {fileID: 1091686332}
   m_Layer: 5
   m_Name: Button(start)
   m_TagString: Untagged
@@ -674,7 +725,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1539698927}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: NewSceneTransition, Assembly-CSharp
         m_MethodName: NewOnClicked
         m_Mode: 1
@@ -724,6 +775,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091686327}
   m_CullTransparentMesh: 1
+--- !u!114 &1091686332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091686327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: PointerEnter
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1091686327}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: PointerExit
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1091686327}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: ScaenTransition
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: NewSelectScene
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1111236491
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1108,7 @@ GameObject:
   - component: {fileID: 1408987890}
   - component: {fileID: 1408987889}
   - component: {fileID: 1408987888}
+  - component: {fileID: 1408987891}
   m_Layer: 5
   m_Name: Button(explanation)
   m_TagString: Untagged
@@ -1021,7 +1134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -93.3}
+  m_AnchoredPosition: {x: 0, y: -100.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1408987888
@@ -1067,19 +1180,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1408987889}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1539698927}
-        m_TargetAssemblyTypeName: NewSceneTransition, Assembly-CSharp
-        m_MethodName: NewOnClicked
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1408987889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1118,6 +1219,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1408987886}
   m_CullTransparentMesh: 1
+--- !u!114 &1408987891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408987886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: PointerEnter
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1408987886}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: PointerExit
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1408987886}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1539698929}
+          m_TargetAssemblyTypeName: StratSceneUIManager, Assembly-CSharp
+          m_MethodName: ScaenTransition
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: NewExplanationScene
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1479392072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1518,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1539698928}
-  - component: {fileID: 1539698927}
   - component: {fileID: 1539698929}
   m_Layer: 0
   m_Name: GameManeger
@@ -1365,18 +1526,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1539698927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539698926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b4fc336e17f694aa78980f6615a8b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1539698928
 Transform:
   m_ObjectHideFlags: 0
@@ -1401,7 +1550,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1539698926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26f27125190e8024da0394cfa0f0f665, type: 3}
+  m_Script: {fileID: 11500000, guid: 067819cc54551584fbc72c2407835856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1897529181
