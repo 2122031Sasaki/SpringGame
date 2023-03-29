@@ -20,7 +20,7 @@ public class Appearancescript : MonoBehaviour
         }
         if(selectCharaNumber == 1)
         {
-            var obj2 = Instantiate(Player_turn, new Vector3(1010.0f, 546f, 1502.0f), Quaternion.Euler(0, 90.0f, 0));
+            var obj2 = Instantiate(Player_turn, new Vector3(1017.0f, 546f, 1502.0f), Quaternion.Euler(0, 90.0f, 0));
             obj3.gameObject.transform.parent = obj2.gameObject.transform;
         }
         PlayerPrefs.DeleteKey("CHARA_NUMBER");
