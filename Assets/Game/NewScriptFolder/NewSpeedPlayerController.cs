@@ -36,6 +36,13 @@ public class NewSpeedPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Transform myTransform = this.transform;
+        Vector3 pos = myTransform.position;
+        if (pos.x < 1018.0f && pos.x >1009.0f)
+        {
+            pos.x -= 0.01f;
+        }
+        myTransform.position = pos;
         GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
 
         
@@ -69,7 +76,7 @@ public class NewSpeedPlayerController : MonoBehaviour
         }
         else if (speedx < LowSpeed || speedy < LowSpeed || speedz < LowSpeed)
         {
-            Key = 0.0f;
+            Key = 0.1f;
         }
         else
         {
