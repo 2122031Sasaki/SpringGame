@@ -48,7 +48,7 @@ public class GravityControl : MonoBehaviour
         }
         if (localAngle.x < 0 && Rha == true)
         {
-            localAngle.x += 0.05f;
+            localAngle.x += 0.1f;
         }
         if (localAngle.x < -20 && localAngle.x > -10 && Rha == false)
         {
