@@ -8,12 +8,14 @@ public class GravityControl : MonoBehaviour
     bool Rha2;
     bool Rha3;
     bool Rha4;
+    bool Rha5;
     void Start()
     {
         Rha = true;
         Rha2 = true;
         Rha3 = true;
         Rha4 = true;
+        Rha5 = true;
     }
 
     void FixedUpdate()
@@ -48,7 +50,7 @@ public class GravityControl : MonoBehaviour
         {
             localAngle.x += 0.05f;
         }
-        if (localAngle.x < -20 && Rha == false)
+        if (localAngle.x < -20 && localAngle.x > -10 && Rha == false)
         {
             localAngle.x += 0.0001f;
         }
@@ -78,7 +80,7 @@ public class GravityControl : MonoBehaviour
         {
             localAngle.x += 0.05f;
         }
-        if (localAngle.x < -20 && Rha3 == false)
+        if (localAngle.x < -20 && localAngle.x > -10 && Rha3 == false)
         {
             localAngle.x += 0.0001f;
         }
@@ -91,7 +93,20 @@ public class GravityControl : MonoBehaviour
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
-        if (localAngle.x < -15 && Rha4 == false)
+        if (localAngle.x < -20 && Rha4 == false)
+        {
+            localAngle.x += 0.000125f;
+        }
+
+        if (localAngle.x < -15 && Rha5 == true)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        }
+        if (localAngle.x < -25 && Rha5 == false)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        }
+        if (localAngle.x < -15 && Rha5 == false)
         {
             localAngle.x += 0.000125f;
         }
@@ -104,7 +119,7 @@ public class GravityControl : MonoBehaviour
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
         }
-        if (localAngle.x >= -15 && Rha2 == false)
+        if (localAngle.x >= -10 && Rha2 == false)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
@@ -115,6 +130,11 @@ public class GravityControl : MonoBehaviour
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
         }
         if (localAngle.x >= -20 && Rha4 == false)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+        }
+        if (localAngle.x >= -15 && Rha5 == false)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
@@ -136,8 +156,12 @@ public class GravityControl : MonoBehaviour
         {
             Physics.gravity = new Vector3(0, -15, 0);
         }
+        if (Rha5 == false)
+        {
+            Physics.gravity = new Vector3(0, -15, 0);
+        }
 
-        if (Rha == true && Rha4 == true && Rha3 == true && Rha4 == true)
+        if (Rha == true && Rha4 == true && Rha3 == true && Rha4 == true && Rha5 == true)
         {
             Physics.gravity = new Vector3(0, -10, 0);
         }
@@ -165,6 +189,11 @@ public class GravityControl : MonoBehaviour
             Rha4 = false;
             Debug.Log("g");
         }
+        if (other.gameObject.name == "RotetaController5")
+        {
+            Rha5 = false;
+            Debug.Log("i");
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -188,6 +217,11 @@ public class GravityControl : MonoBehaviour
         {
             Rha4 = true;
             Debug.Log("h");
+        }
+        if (other.gameObject.name == "RotetaController5")
+        {
+            Rha5 = true;
+            Debug.Log("j");
         }
     }
 }
