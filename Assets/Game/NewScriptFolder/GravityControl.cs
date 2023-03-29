@@ -7,11 +7,13 @@ public class GravityControl : MonoBehaviour
     bool Rha;
     bool Rha2;
     bool Rha3;
+    bool Rha4;
     void Start()
     {
         Rha = true;
         Rha2 = true;
         Rha3 = true;
+        Rha4 = true;
     }
 
     void FixedUpdate()
@@ -48,7 +50,7 @@ public class GravityControl : MonoBehaviour
         }
         if (localAngle.x < -20 && Rha == false)
         {
-            localAngle.x += 0.00125f;
+            localAngle.x += 0.0001f;
         }
 
         if (localAngle.x < -10 && Rha2 == true)
@@ -64,7 +66,7 @@ public class GravityControl : MonoBehaviour
             localAngle.x += 0.00125f;
         }
 
-        if (localAngle.x < 0 && Rha == true)
+        if (localAngle.x < -20 && Rha3 == true)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
@@ -78,7 +80,20 @@ public class GravityControl : MonoBehaviour
         }
         if (localAngle.x < -20 && Rha3 == false)
         {
-            localAngle.x += 0.00125f;
+            localAngle.x += 0.0001f;
+        }
+
+        if (localAngle.x < -20 && Rha4 == true)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        }
+        if (localAngle.x < -30 && Rha4 == false)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        }
+        if (localAngle.x < -15 && Rha4 == false)
+        {
+            localAngle.x += 0.000125f;
         }
 
         localAngle.z = 0.0f;
@@ -99,6 +114,11 @@ public class GravityControl : MonoBehaviour
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
         }
+        if (localAngle.x >= -20 && Rha4 == false)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+        }
 
         if (Rha == false)
         {
@@ -112,8 +132,12 @@ public class GravityControl : MonoBehaviour
         {
             Physics.gravity = new Vector3(0, -15, 0);
         }
+        if (Rha4 == false)
+        {
+            Physics.gravity = new Vector3(0, -15, 0);
+        }
 
-        if (Rha == true && Rha2 == true || Rha3 == true)
+        if (Rha == true && Rha4 == true && Rha3 == true && Rha4 == true)
         {
             Physics.gravity = new Vector3(0, -10, 0);
         }
@@ -136,6 +160,11 @@ public class GravityControl : MonoBehaviour
             Rha3 = false;
             Debug.Log("e");
         }
+        if (other.gameObject.name == "RotetaController4")
+        {
+            Rha4 = false;
+            Debug.Log("g");
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -154,6 +183,11 @@ public class GravityControl : MonoBehaviour
         {
             Rha3 = true;
             Debug.Log("f");
+        }
+        if (other.gameObject.name == "RotetaController4")
+        {
+            Rha4 = true;
+            Debug.Log("h");
         }
     }
 }
