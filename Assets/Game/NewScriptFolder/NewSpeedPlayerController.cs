@@ -22,12 +22,12 @@ public class NewSpeedPlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Speed = -10.0f;
-        Turn = 0.5f;
+        Speed = -10.5f;
+        Turn = 0.425f;
         DownSpeed = 1.0f;
         Brake = 5.0f;
         SpeedUpTime = 3.0f;
-        MaxSpeed = 20.0f;
+        MaxSpeed = 21.5f;
         LowSpeed = -5.0f;
         Key = 1.0f;
         Application.targetFrameRate = 120;
@@ -76,7 +76,7 @@ public class NewSpeedPlayerController : MonoBehaviour
         }
         else if (speedx < LowSpeed || speedy < LowSpeed || speedz < LowSpeed)
         {
-            Key = 0.1f;
+            Key = 0.5f;
         }
         else
         {
