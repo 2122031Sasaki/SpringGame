@@ -138,23 +138,23 @@ public class GravityControl : MonoBehaviour
 
         if (Rha == false)
         {
-            Physics.gravity = new Vector3(0, -18, 0);
+            Physics.gravity = new Vector3(0, -15, 0);
         }
         if (Rha2 == false)
         {
-            Physics.gravity = new Vector3(0, -20, 0);
+            Physics.gravity = new Vector3(0, -18, 0);
         }
         if (Rha3 == false)
         {
-            Physics.gravity = new Vector3(0, -18, 0);
+            Physics.gravity = new Vector3(0, -15, 0);
         }
         if (Rha4 == false)
         {
-            Physics.gravity = new Vector3(0, -18, 0);
+            Physics.gravity = new Vector3(0, -15, 0);
         }
         if (Rha5 == false)
         {
-            Physics.gravity = new Vector3(0, -18, 0);
+            Physics.gravity = new Vector3(0, -15, 0);
         }
 
         if (Rha == true && Rha4 == true && Rha3 == true && Rha4 == true && Rha5 == true)

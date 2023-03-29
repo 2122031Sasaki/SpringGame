@@ -22,12 +22,12 @@ public class NewSpeedPlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Speed = -10.5f;
+        Speed = -11.0f;
         Turn = 0.425f;
         DownSpeed = 1.0f;
         Brake = 5.0f;
         SpeedUpTime = 3.0f;
-        MaxSpeed = 21.5f;
+        MaxSpeed = 20.0f;
         LowSpeed = -5.0f;
         Key = 1.0f;
         Application.targetFrameRate = 120;
