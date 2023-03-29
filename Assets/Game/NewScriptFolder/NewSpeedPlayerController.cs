@@ -22,7 +22,7 @@ public class NewSpeedPlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Speed = -11.0f;
+        Speed = -10.0f;
         Turn = 0.425f;
         DownSpeed = 1.0f;
         Brake = 5.0f;
@@ -38,15 +38,15 @@ public class NewSpeedPlayerController : MonoBehaviour
     {
         Transform myTransform = this.transform;
         Vector3 pos = myTransform.position;
-        if (pos.x < 1018.0f && pos.x >1009.0f)
+        if (pos.x < 1018.0f && pos.x > 1000.0f && pos.y > 542.0)
         {
-            pos.x -= 0.01f;
+            pos.x -= 0.05f;
         }
         myTransform.position = pos;
         GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
 
         
-        if (Input.GetKey(KeyCode.W) == true)
+        if (Input.GetKey(KeyCode.W))
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
         }
