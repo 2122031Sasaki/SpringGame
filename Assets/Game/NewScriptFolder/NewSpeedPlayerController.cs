@@ -10,6 +10,7 @@ public class NewSpeedPlayerController : MonoBehaviour
     private float Brake;
     private float DownSpeed;
     private float SpeedUpTime;
+    private float miniSpeedUpTime;
     private float MaxSpeed;
     private float LowSpeed;
     private float Key;
@@ -22,11 +23,12 @@ public class NewSpeedPlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Speed = -11.0f;
+        Speed = -10.0f;
         Turn = 0.425f;
         DownSpeed = 1.0f;
         Brake = 5.0f;
         SpeedUpTime = 3.0f;
+        miniSpeedUpTime = 2.0f;
         MaxSpeed = 20.0f;
         LowSpeed = -5.0f;
         Key = 1.0f;
@@ -83,20 +85,35 @@ public class NewSpeedPlayerController : MonoBehaviour
             Key = 1.0f;
         }
     }
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Pole")
+        if (other.gameObject.tag == "Pole")
         {
             StartCoroutine("SpeedUp");
             Debug.Log("A");
+            MaxSpeed += 0.05f;
+        }
+        if (other.gameObject.tag == "miniPole")
+        {
+            StartCoroutine("miniSpeedUp");
+            Debug.Log("C");
+            MaxSpeed += 0.05f;
         }
     }
 
     IEnumerator SpeedUp()
     {
-        Speed = Speed * 1.25f;
+        Speed = Speed * 1.15f;
         yield return new WaitForSeconds(SpeedUpTime);
-        Speed = -11.0f;
+        Speed = -10.5f;
         Debug.Log("B");
+    }
+
+    IEnumerator miniSpeedUp()
+    {
+        Speed = Speed * 1.10f;
+        yield return new WaitForSeconds(miniSpeedUpTime);
+        Speed = -10.5f;
+        Debug.Log("D");
     }
 }

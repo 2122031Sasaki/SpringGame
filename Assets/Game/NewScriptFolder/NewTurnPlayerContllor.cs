@@ -22,7 +22,7 @@ public class NewTurnPlayerContllor : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Speed = -11.0f;
+        Speed = -10.0f;
         Turn = 0.925f;
         DownSpeed = 0.01f;
         Brake = 5.0f;
@@ -88,15 +88,16 @@ public class NewTurnPlayerContllor : MonoBehaviour
         if (collision.gameObject.tag == "Pole")
         {
             StartCoroutine("SpeedUp");
+            MaxSpeed += 0.1f;
             Debug.Log("A");
         }
     }
 
     IEnumerator SpeedUp()
     {
-        Speed = Speed * 1.5f;
+        Speed = Speed * 1.25f;
         yield return new WaitForSeconds(SpeedUpTime);
-        Speed = 3.0f;
+        Speed = -10.0f;
         Debug.Log("B");
     }
 }
