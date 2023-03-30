@@ -9,6 +9,7 @@ public class GravityControl : MonoBehaviour
     bool Rha3;
     bool Rha4;
     bool Rha5;
+    bool Rha6;
     void Start()
     {
         Rha = true;
@@ -16,6 +17,7 @@ public class GravityControl : MonoBehaviour
         Rha3 = true;
         Rha4 = true;
         Rha5 = true;
+        Rha6 = true;
     }
 
     void FixedUpdate()
@@ -138,15 +140,17 @@ public class GravityControl : MonoBehaviour
 
         if (Rha == false)
         {
-            Physics.gravity = new Vector3(0, -15, 0);
+            Physics.gravity = new Vector3(0, -16, 0);
+            GetComponent<Rigidbody>().mass = 8.0f;
         }
         if (Rha2 == false)
         {
-            Physics.gravity = new Vector3(0, -18, 0);
+            Physics.gravity = new Vector3(0, -19, 0);
         }
         if (Rha3 == false)
         {
-            Physics.gravity = new Vector3(0, -15, 0);
+            Physics.gravity = new Vector3(0, -16, 0);
+            GetComponent<Rigidbody>().mass = 8.0f;
         }
         if (Rha4 == false)
         {
@@ -156,14 +160,19 @@ public class GravityControl : MonoBehaviour
         {
             Physics.gravity = new Vector3(0, -15, 0);
         }
+        if (Rha6 == false)
+        {
+            Physics.gravity = new Vector3(0, -15, 0);
+        }
 
-        if (Rha == true && Rha4 == true && Rha3 == true && Rha4 == true && Rha5 == true)
+        if (Rha == true && Rha4 == true && Rha3 == true && Rha4 == true && Rha5 == true && Rha6 == true)
         {
             Physics.gravity = new Vector3(0, -10, 0);
+            GetComponent<Rigidbody>().mass = 3.4f;
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "RotetaController")
         {
@@ -189,6 +198,11 @@ public class GravityControl : MonoBehaviour
         {
             Rha5 = false;
             Debug.Log("i");
+        }
+        if (other.gameObject.name == "GravityController")
+        {
+            Rha6 = false;
+            Debug.Log("E");
         }
     }
 
@@ -218,6 +232,11 @@ public class GravityControl : MonoBehaviour
         {
             Rha5 = true;
             Debug.Log("j");
+        }
+        if (other.gameObject.name == "GravityController")
+        {
+            Rha6 = true;
+            Debug.Log("F");
         }
     }
 }
