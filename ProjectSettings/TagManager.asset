@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - FallDetector
+  - Pole
+  - miniPoal
+  - miniPole
   layers:
   - Default
   - TransparentFX
