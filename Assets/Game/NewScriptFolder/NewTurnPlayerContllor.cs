@@ -22,7 +22,7 @@ public class NewTurnPlayerContllor : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Speed = -10.0f;
+        Speed = -11.0f;
         Turn = 0.925f;
         DownSpeed = 0.01f;
         Brake = 5.0f;
@@ -83,11 +83,12 @@ public class NewTurnPlayerContllor : MonoBehaviour
             Key = 1.0f;
         }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (other.gameObject.name == "SpeedUpBoard" || other.gameObject.name == "SpeedUpWall")
+        if (collision.gameObject.tag == "Pole")
         {
             StartCoroutine("SpeedUp");
+            Debug.Log("A");
         }
     }
 
@@ -96,5 +97,6 @@ public class NewTurnPlayerContllor : MonoBehaviour
         Speed = Speed * 1.5f;
         yield return new WaitForSeconds(SpeedUpTime);
         Speed = 3.0f;
+        Debug.Log("B");
     }
 }
