@@ -15,9 +15,14 @@ public class CallParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // transform‚ğæ“¾
+        Transform myTransform = this.transform;
+
+        // À•W‚ğæ“¾
+        Vector3 pos = myTransform.position;
         if (call == true)
         {
-            Instantiate(getparticle);
+            Instantiate(getparticle, this.transform.position, Quaternion.Euler(0, 90, 0));
         }
         
     }
