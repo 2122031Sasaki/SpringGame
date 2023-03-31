@@ -7,7 +7,6 @@ TagManager:
   - Fire
   - FallDetector
   - Pole
-  - miniPoal
   - miniPole
   layers:
   - Default
