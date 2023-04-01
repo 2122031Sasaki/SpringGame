@@ -52,10 +52,6 @@ public class GravityControl : MonoBehaviour
         {
             localAngle.x += 0.15f;
         }
-        if (localAngle.x < -20 && localAngle.x > -10 && Rha == false)
-        {
-            localAngle.x += 0.0001f;
-        }
 
         if (localAngle.x < -10 && Rha2 == true)
         {
@@ -64,10 +60,6 @@ public class GravityControl : MonoBehaviour
         if (localAngle.x < -20 && Rha2 == false)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        }
-        if (localAngle.x < -10 && Rha2 == false)
-        {
-            localAngle.x += 0.00125f;
         }
 
         if (localAngle.x < -20 && Rha3 == true)
@@ -78,10 +70,6 @@ public class GravityControl : MonoBehaviour
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
-        if (localAngle.x < -20 && localAngle.x > -10 && Rha3 == false)
-        {
-            localAngle.x += 0.0001f;
-        }
 
         if (localAngle.x < -20 && Rha4 == true)
         {
@@ -91,10 +79,6 @@ public class GravityControl : MonoBehaviour
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
-        if (localAngle.x < -20 && Rha4 == false)
-        {
-            localAngle.x += 0.000125f;
-        }
 
         if (localAngle.x < -15 && Rha5 == true)
         {
@@ -103,10 +87,6 @@ public class GravityControl : MonoBehaviour
         if (localAngle.x < -25 && Rha5 == false)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        }
-        if (localAngle.x < -15 && localAngle.x > -5 && Rha5 == false)
-        {
-            localAngle.x += 0.000125f;
         }
 
         localAngle.z = 0.0f;
