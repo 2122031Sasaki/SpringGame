@@ -5,20 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("NewResultScene");
+        if (other.gameObject.CompareTag("tfall_2itfall_2"))
+        {
+            SceneManager.LoadScene("NewResultScene");
+        }
+
+        if (other.gameObject.CompareTag("Cube.025"))
+        {
+            SceneManager.LoadScene("NewResultScene2");
+        }
     }
 }
