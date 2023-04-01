@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CallParticle : MonoBehaviour
+public class CallParticle90 : MonoBehaviour
 {
     bool call;
-    public GameObject getparticle;
+    public GameObject getparticle90;
     GameObject obj;
     // Start is called before the first frame update
     void Start()
@@ -23,8 +23,8 @@ public class CallParticle : MonoBehaviour
         Vector3 pos = myTransform.localScale;
         if (call == true)
         {
-            obj = Instantiate(getparticle, this.transform.position, Quaternion.Euler(0, 90, 0));
-            obj.transform.localScale = new Vector3(pos.x * 2.75f, pos.y * 2.75f, pos.z * 2.75f);
+            obj = Instantiate(getparticle90, this.transform.position, Quaternion.Euler(0, 0, 0));
+            obj.transform.localScale = new Vector3(pos.x * 2.75f, 2.5f, pos.z * 2.75f);
         }
 
     }
