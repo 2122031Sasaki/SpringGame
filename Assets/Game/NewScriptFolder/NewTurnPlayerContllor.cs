@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class NewTurnPlayerContllor : MonoBehaviour
@@ -10,6 +11,7 @@ public class NewTurnPlayerContllor : MonoBehaviour
     private float Brake;
     private float DownSpeed;
     private float SpeedUpTime;
+    private float miniSpeedUpTime;
     private float MaxSpeed;
     private float LowSpeed;
     private float Key;
@@ -27,6 +29,7 @@ public class NewTurnPlayerContllor : MonoBehaviour
         DownSpeed = 0.01f;
         Brake = 5.0f;
         SpeedUpTime = 3.0f;
+        miniSpeedUpTime = 2.0f;
         MaxSpeed = 15.0f;
         LowSpeed = -5.0f;
         Key = 1.0f;
@@ -83,21 +86,31 @@ public class NewTurnPlayerContllor : MonoBehaviour
             Key = 1.0f;
         }
     }
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Pole")
+        if (other.gameObject.tag == "Pole")
         {
             StartCoroutine("SpeedUp");
-            MaxSpeed += 0.1f;
-            Debug.Log("A");
+            MaxSpeed += 0.05f;
+        }
+        if (other.gameObject.tag == "miniPole")
+        {
+            StartCoroutine("miniSpeedUp");
+            MaxSpeed += 0.05f;
         }
     }
 
     IEnumerator SpeedUp()
     {
-        Speed = Speed * 1.25f;
+        Speed = Speed * 1.15f;
         yield return new WaitForSeconds(SpeedUpTime);
-        Speed = -10.0f;
-        Debug.Log("B");
+        Speed = -10.5f;
+    }
+
+    IEnumerator miniSpeedUp()
+    {
+        Speed = Speed * 1.10f;
+        yield return new WaitForSeconds(miniSpeedUpTime);
+        Speed = -10.5f;
     }
 }
