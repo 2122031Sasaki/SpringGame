@@ -157,32 +157,26 @@ public class GravityControl : MonoBehaviour
         if (other.gameObject.name == "RotetaController")
         {
             Rha = false;
-            Debug.Log("a");
         }
         if (other.gameObject.name == "RotetaController2")
         {
             Rha2 = false;
-            Debug.Log("c");
         }
         if (other.gameObject.name == "RotetaController3")
         {
             Rha3 = false;
-            Debug.Log("e");
         }
         if (other.gameObject.name == "RotetaController4")
         {
             Rha4 = false;
-            Debug.Log("g");
         }
         if (other.gameObject.name == "RotetaController5")
         {
             Rha5 = false;
-            Debug.Log("i");
         }
         if (other.gameObject.name == "GravityController")
         {
             Rha6 = false;
-            Debug.Log("E");
         }
     }
 
@@ -191,32 +185,26 @@ public class GravityControl : MonoBehaviour
         if (other.gameObject.name == "RotetaController")
         {
             Rha = true;
-            Debug.Log("b");
         }
         if (other.gameObject.name == "RotetaController2")
         {
             Rha2 = true;
-            Debug.Log("d");
         }
         if (other.gameObject.name == "RotetaController3")
         {
             Rha3 = true;
-            Debug.Log("f");
         }
         if (other.gameObject.name == "RotetaController4")
         {
             Rha4 = true;
-            Debug.Log("h");
         }
         if (other.gameObject.name == "RotetaController5")
         {
             Rha5 = true;
-            Debug.Log("j");
         }
         if (other.gameObject.name == "GravityController")
         {
             Rha6 = true;
-            Debug.Log("F");
         }
     }
 }
