@@ -36,7 +36,8 @@ public class NewfallScript : MonoBehaviour
             Vector3 respawnPos = respawnObj.transform.position;
 
             // リスポーン地点を設定・プレイヤーを移動
-            respawnPos.y += 5.0f;
+            respawnPos.y += 8.0f;
+            respawnPos.z += 8.0f;
 
             Vector3 worldAngle = respawnObj.transform.eulerAngles;
             worldAngle.x = 0.0f;
