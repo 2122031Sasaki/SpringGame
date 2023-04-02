@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class NewSpeedPlayerController : MonoBehaviour
@@ -45,12 +46,12 @@ public class NewSpeedPlayerController : MonoBehaviour
             pos.x -= 0.05f;
         }
         myTransform.position = pos;
+
         GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
 
-        
         if (Input.GetKey(KeyCode.W))
         {
-            GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
+             GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -90,13 +91,11 @@ public class NewSpeedPlayerController : MonoBehaviour
         if (other.gameObject.tag == "Pole")
         {
             StartCoroutine("SpeedUp");
-            Debug.Log("A");
             MaxSpeed += 0.05f;
         }
         if (other.gameObject.tag == "miniPole")
         {
             StartCoroutine("miniSpeedUp");
-            Debug.Log("C");
             MaxSpeed += 0.05f;
         }
     }
@@ -106,7 +105,6 @@ public class NewSpeedPlayerController : MonoBehaviour
         Speed = Speed * 1.15f;
         yield return new WaitForSeconds(SpeedUpTime);
         Speed = -10.5f;
-        Debug.Log("B");
     }
 
     IEnumerator miniSpeedUp()
@@ -114,6 +112,5 @@ public class NewSpeedPlayerController : MonoBehaviour
         Speed = Speed * 1.10f;
         yield return new WaitForSeconds(miniSpeedUpTime);
         Speed = -10.5f;
-        Debug.Log("D");
     }
 }

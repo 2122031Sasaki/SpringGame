@@ -9,12 +9,14 @@ public class NewfallScript : MonoBehaviour
     private GameObject respawnObj;
     Rigidbody rb;
     bool fall;
+    private float time;
 
     // Start is called before the first frame update
     void Start()
     {
         this.rb = GetComponent<Rigidbody>();
         fall = false;
+        time = 0.0f;
     }
 
     // Update is called once per frame
@@ -24,6 +26,8 @@ public class NewfallScript : MonoBehaviour
         {
             // プレイヤーの運動を停止
             this.rb.isKinematic = true;
+
+            time += Time.deltaTime;
 
             // 子オブジェクトを取得
             respawnObj = transform.GetChild(4).gameObject;
@@ -46,6 +50,15 @@ public class NewfallScript : MonoBehaviour
             this.rb.isKinematic = false;
 
             fall= false;
+        }
+
+        if (time < 2 && time!= 0.0f)
+        {
+            Transform myTransform = this.transform;
+            Vector3 pos = myTransform.position;
+            pos.z -= 0.05f;
+            myTransform.position = pos;
+            time = 0.0f;
         }
     }
 
