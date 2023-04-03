@@ -20,7 +20,7 @@ public class timeScript : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        timeText.text = "Time:" + time.ToString("F2");
+        timeText.text = "" + time.ToString("F2");
     }
 
     public static float gettime()
