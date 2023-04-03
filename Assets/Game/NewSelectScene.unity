@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.48311317, g: 0.5279229, b: 0.59743935, a: 1}
+  m_IndirectSpecularColor: {r: 0.48311216, g: 0.52792263, b: 0.5974373, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -817,10 +817,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 859742741}
-          m_TargetAssemblyTypeName: SelectSceneUIManager, Assembly-CSharp
-          m_MethodName: ScaenTransition
-          m_Mode: 5
+        - m_Target: {fileID: 468668945}
+          m_TargetAssemblyTypeName: NewSelectScript, Assembly-CSharp
+          m_MethodName: OnClickStart
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
