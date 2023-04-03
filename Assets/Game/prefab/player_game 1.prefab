@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 5061463231372750534}
   - component: {fileID: -8548236592215683847}
   - component: {fileID: -973606667645279357}
-  - component: {fileID: 5437910933455749186}
+  - component: {fileID: -3262846016625457654}
   m_Layer: 0
   m_Name: player_game 1
   m_TagString: Player
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getIce: {fileID: 2272349435585815835, guid: 0730b2b30bec144438ad531739275400, type: 3}
   getSnow: {fileID: 8149225622200981062, guid: e95a040fdee25fc47a4cd109a47a7b5c, type: 3}
---- !u!114 &5437910933455749186
+--- !u!114 &-3262846016625457654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4057279779520953587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d9d8b82b4514524da3e71653d427841, type: 3}
+  m_Script: {fileID: 11500000, guid: 1403e90e605c7d547837de5d46212bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GameManeger: {fileID: 0}
