@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/NewExplanationScene.unity
     guid: 9ee03f0db57030d489a8a748accd6075
+  - enabled: 1
+    path: Assets/Game/NewResultScene2.unity
+    guid: 521203a84e399464c9f978fee66db437
   m_configObjects: {}
