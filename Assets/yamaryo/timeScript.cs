@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class timeScript : MonoBehaviour
 {
     public static float time;
+    public float scoreTime;
 
     public Text timeText;
 
@@ -19,6 +20,7 @@ public class timeScript : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        scoreTime = time;
 
         timeText.text = "" + time.ToString("F2");
     }
