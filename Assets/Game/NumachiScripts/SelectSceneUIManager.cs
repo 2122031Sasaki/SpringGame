@@ -20,10 +20,4 @@ public class SelectSceneUIManager : MonoBehaviour
     {
         button.transform.DOScale(minScale, 0.3f);
     }
-
-    //シーン遷移関数(引数にstring型でシーン名を入力)
-    public void ScaenTransition(string scene)
-    {
-        SceneManager.LoadScene(scene);
-    }
 }
