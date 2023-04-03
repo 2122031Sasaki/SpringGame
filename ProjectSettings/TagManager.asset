@@ -10,6 +10,8 @@ TagManager:
   - miniPole
   - tfall_2itfall_2
   - Cube.025
+  - DestroySnow
+  - DestroyIce
   layers:
   - Default
   - TransparentFX
