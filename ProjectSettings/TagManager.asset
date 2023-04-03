@@ -8,6 +8,8 @@ TagManager:
   - FallDetector
   - Pole
   - miniPole
+  - tfall_2itfall_2
+  - Cube.025
   layers:
   - Default
   - TransparentFX
