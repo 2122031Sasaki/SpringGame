@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public timeScript Cleartime;
+    public GameObject GameManeger;
     float Score;
 
     private void Start()
     {
+
         Score = PlayerPrefs.GetFloat("SCORE");
     }
 
@@ -17,13 +18,15 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("tfall_2itfall_2"))
         {
-            Score = Cleartime.time;
+            Score = GameManeger.GetComponent<timeScript>().scoreTime;
             PlayerPrefs.SetFloat("SCORE", Score);
             SceneManager.LoadScene("NewResultScene");
         }
 
         if (other.gameObject.CompareTag("Cube.025"))
         {
+            Score = GameManeger.GetComponent<timeScript>().scoreTime;
+            PlayerPrefs.SetFloat("SCORE", Score);
             SceneManager.LoadScene("NewResultScene2");
         }
     }
