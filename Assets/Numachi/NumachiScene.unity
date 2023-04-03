@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.48311317, g: 0.5279229, b: 0.59743935, a: 1}
+  m_IndirectSpecularColor: {r: 0.48311162, g: 0.52792275, b: 0.5974375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4443,7 +4443,7 @@ MonoBehaviour:
   kori: {fileID: 6336353235407230024, guid: d38119e616795984589619545699d02f, type: 3}
   kamakura: {fileID: 3577007165823160722, guid: 2d5372eae1a6f4f4183b9b2c4bacea48, type: 3}
   daruma: {fileID: 2708401584214775959, guid: 20405e3e750b6a448a612ecaf481484e, type: 3}
-  star: {fileID: 1466085893363456567, guid: 59e3615a825b36a4cb6964400531f604, type: 3}
+  star: {fileID: 6936187877058647268, guid: 4d312f421a00c784a9ecd561b0ce832c, type: 3}
 --- !u!4 &1999659132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4276645557764383999, guid: 14e26ee2cfc455747bf81276d67424d0, type: 3}
