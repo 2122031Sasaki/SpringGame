@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class timeScript : MonoBehaviour
 {
     public static float time;
+    //ƒkƒ}ƒ`‚³‚ñ‚ª‘«‚µ‚½‚Æ‚±‚ë
     public float scoreTime;
 
     public Text timeText;
