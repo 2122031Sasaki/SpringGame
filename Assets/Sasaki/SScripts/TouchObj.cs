@@ -25,7 +25,7 @@ public class TouchObj : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Game_star(Clone)")
+        if (other.gameObject.name == "Game_Newstar(Clone)")
         {
             StartCoroutine("Muteki");
             destroyObj = other.gameObject;
