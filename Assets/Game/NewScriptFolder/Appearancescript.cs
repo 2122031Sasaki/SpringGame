@@ -27,8 +27,6 @@ public class Appearancescript : MonoBehaviour
             obj3.gameObject.transform.parent = obj2.gameObject.transform;
             obj4.gameObject.transform.parent = obj2.gameObject.transform;
         }
-        PlayerPrefs.DeleteKey("CHARA_NUMBER");
-
     }
 
     void Update()
