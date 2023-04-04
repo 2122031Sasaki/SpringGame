@@ -1004,6 +1004,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 832149486116592389, guid: acc336de679111b46bedba7cb6f4163d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 958332046222252780, guid: acc336de679111b46bedba7cb6f4163d, type: 3}
       propertyPath: m_Name
       value: Game_Stage
@@ -1051,6 +1055,14 @@ PrefabInstance:
     - target: {fileID: 6911884945964357029, guid: acc336de679111b46bedba7cb6f4163d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007709075588, guid: acc336de679111b46bedba7cb6f4163d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544783546449923756, guid: acc336de679111b46bedba7cb6f4163d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acc336de679111b46bedba7cb6f4163d, type: 3}
