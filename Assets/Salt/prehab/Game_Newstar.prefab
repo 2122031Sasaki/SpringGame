@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1641205625589062125}
   m_Layer: 0
   m_Name: Game_Newstar
-  m_TagString: Untagged
+  m_TagString: DestroyStar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
