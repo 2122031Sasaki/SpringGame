@@ -43,6 +43,7 @@ public class DestroyParticle : MonoBehaviour
         if (Callstar == true)
         {
             objStar = Instantiate(getstar, this.transform.position, Quaternion.identity);
+            Callstar = false;
         }
 
     }
