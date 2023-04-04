@@ -14,6 +14,8 @@ public class NewTurnPlayerContllor : MonoBehaviour
     private float miniSpeedUpTime;
     private float MaxSpeed;
     private float LowSpeed;
+    private float Jump;
+    private bool Jumpable;
     private float Key;
 
     void FixedUpdate()
@@ -32,6 +34,8 @@ public class NewTurnPlayerContllor : MonoBehaviour
         miniSpeedUpTime = 2.0f;
         MaxSpeed = 15.0f;
         LowSpeed = -5.0f;
+        Jump = 100.0f;
+        Jumpable = false;
         Key = 1.0f;
         Application.targetFrameRate = 120;
     }
@@ -70,6 +74,12 @@ public class NewTurnPlayerContllor : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * Brake, ForceMode.Force);
         }
+
+        if (Input.GetKey(KeyCode.Space) && Jumpable)
+        {
+            Vector3 force = new Vector3(0.0f, Jump, 0.0f);
+            rb.AddForce(force);
+        }
         float speedx = Mathf.Abs(rb.velocity.x);
         float speedy = Mathf.Abs(rb.velocity.y);
         float speedz = Mathf.Abs(rb.velocity.z);
@@ -85,6 +95,14 @@ public class NewTurnPlayerContllor : MonoBehaviour
         {
             Key = 1.0f;
         }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Jumpable = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        Jumpable = false;
     }
     private void OnTriggerEnter(Collider other)
     {
