@@ -12,6 +12,7 @@ TagManager:
   - Cube.025
   - DestroySnow
   - DestroyIce
+  - DestroyStar
   layers:
   - Default
   - TransparentFX

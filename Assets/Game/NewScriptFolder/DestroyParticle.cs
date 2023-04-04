@@ -8,15 +8,19 @@ public class DestroyParticle : MonoBehaviour
 {
     bool CallIce;
     bool CallSnow;
+    bool Callstar;
     public GameObject getIce;
     public GameObject getSnow;
+    public GameObject getstar; 
     GameObject objIce;
     GameObject objSnow;
+    GameObject objStar;
     // Start is called before the first frame update
     void Start()
     {
         CallIce = false;
         CallSnow= false;
+        Callstar = false;
     }
 
     // Update is called once per frame
@@ -36,6 +40,10 @@ public class DestroyParticle : MonoBehaviour
             objSnow = Instantiate(getSnow, this.transform.position, Quaternion.identity);
             CallSnow= false;
         }
+        if (Callstar == true)
+        {
+            objStar = Instantiate(getstar, this.transform.position, Quaternion.identity);
+        }
 
     }
 
@@ -48,6 +56,10 @@ public class DestroyParticle : MonoBehaviour
         if (other.gameObject.tag == "DestroyIce")
         {
             CallIce = true;
+        }
+        if (other.gameObject.tag == "DestroyStar")
+        {
+            Callstar = true;
         }
     }
 }
