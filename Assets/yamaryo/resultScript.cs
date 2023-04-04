@@ -19,7 +19,7 @@ public class resultScript : MonoBehaviour
         time = timeScript.gettime();
         resulttimeText.text = "Time:" + time.ToString("F2");
 
-        besttime = PlayerPrefs.GetFloat("BESTTIME01", 100);
+        besttime = PlayerPrefs.GetFloat("BESTTIME01", 1000);
        
     }
 
