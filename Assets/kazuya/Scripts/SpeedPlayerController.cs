@@ -12,6 +12,8 @@ public class SpeedPlayerController : MonoBehaviour
     private float SpeedUpTime;
     private float MaxSpeed;
     private float LowSpeed;
+    private float Jump;
+    private bool Jumpable;
     private float Key;
 
     void FixedUpdate()
@@ -29,7 +31,10 @@ public class SpeedPlayerController : MonoBehaviour
         SpeedUpTime = 3.0f;
         MaxSpeed = 20.0f;
         LowSpeed = -5.0f;
+        Jump = 10.0f;
         Key = 1.0f;
+        Jumpable = false;
+        Debug.Log(Jumpable);
     }
 
     //Update is called once per frame
@@ -41,7 +46,6 @@ public class SpeedPlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) == true)//Wで加速
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
-            Debug.Log(Key);
         }
 
         if (Input.GetKey(KeyCode.A))//Aで右に曲がる,Turnの軸と数値は要調整,DownSpeedはTurnPlayerに比べ重めに設定
@@ -60,7 +64,14 @@ public class SpeedPlayerController : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * Brake, ForceMode.Force);
         }
+
+        if (Input.GetKey(KeyCode.Space) && Jumpable )//Speceでジャンプ
+        {
+            Vector3 force = new Vector3(0.0f, Jump, 0.0f);    // 力を設定
+            rb.AddForce(force);  // 力を加える
+        }
         
+
         float speedx = Mathf.Abs(rb.velocity.x);
         float speedy = Mathf.Abs(rb.velocity.y);
         float speedz = Mathf.Abs(rb.velocity.z);
@@ -77,6 +88,14 @@ public class SpeedPlayerController : MonoBehaviour
             Key = 1.0f;
         }
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Jumpable = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        Jumpable = false;
     }
     //佐崎さんから頂いた加速用のスクリプト
     private void OnTriggerEnter(Collider other)

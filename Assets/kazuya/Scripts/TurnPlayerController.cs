@@ -42,7 +42,6 @@ public class TurnPlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) == true)//Wで加速
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * Speed * Key, ForceMode.Force);
-            Debug.Log(Key);
         }
 
         if (Input.GetKey(KeyCode.A))//Aで右に曲がる,Turnの軸と数値は要調整,DownSpeedはTurnPlayerに比べ重めに設定
