@@ -473,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getIce: {fileID: 2272349435585815835, guid: 0730b2b30bec144438ad531739275400, type: 3}
   getSnow: {fileID: 8149225622200981062, guid: e95a040fdee25fc47a4cd109a47a7b5c, type: 3}
+  getstar: {fileID: 4787398822245087367, guid: 1a40f5e627c48bc49bdff1d80ef795be, type: 3}
 --- !u!114 &1799774278416971009
 MonoBehaviour:
   m_ObjectHideFlags: 0
