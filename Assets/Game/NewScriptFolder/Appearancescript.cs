@@ -12,7 +12,6 @@ public class Appearancescript : MonoBehaviour
     void Start()
     {
         selectCharaNumber= PlayerPrefs.GetInt("CHARA_NUMBER", 0);
-        Debug.Log(selectCharaNumber);
         var obj3 = Instantiate(Camera, new Vector3(1019.75f, 548.25f, 1502.0f), Quaternion.Euler(20, 270.0f, 0));
         var obj4 = Instantiate(respawn, new Vector3(1022.0f, 546.0f, 1502.0f), Quaternion.Euler(0, 90.0f, 0));
         if (selectCharaNumber == 0)
