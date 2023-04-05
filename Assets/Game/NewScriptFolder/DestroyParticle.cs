@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Ball;
-using static UnityEditor.PlayerSettings;
 
 public class DestroyParticle : MonoBehaviour
 {
