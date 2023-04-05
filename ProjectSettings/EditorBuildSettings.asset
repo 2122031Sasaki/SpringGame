@@ -5,42 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Umebara/Uselect.unity
-    guid: d341c6b9b54e52746b7c38ddd0713c31
-  - enabled: 1
-    path: Assets/Umebara/Ustart.unity
-    guid: d1798d355bfb1c54e936acfae461a71c
-  - enabled: 1
-    path: Assets/Ayaka/StartScene.unity
-    guid: ebc0678c9625c9e4c820345c687acfc8
-  - enabled: 1
-    path: Assets/Ayaka/CharaScene.unity
-    guid: de0421f9771839e47b248a88ed46d733
-  - enabled: 1
-    path: Assets/Ayaka/GameScene.unity
-    guid: b9347b0cecea85b409298012faa5f283
-  - enabled: 1
-    path: Assets/Ayaka/ResultScene.unity
-    guid: 7db2610879ef52d479d11a764e6883a1
-  - enabled: 1
-    path: Assets/Game/NewGameScene.unity
-    guid: 4c8e558cce3f14342bd8551b127580c3
-  - enabled: 1
-    path: Assets/Game/NewResultScene.unity
-    guid: 623ad480905fff24aab1b6ccca46741d
-  - enabled: 1
-    path: Assets/Game/NewSelectScene.unity
-    guid: baf84855f8ef7894386f9dbead767be4
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Game/NewStartScene.unity
     guid: eaf5775379039134ba091da48ec6b062
   - enabled: 1
-    path: Assets/Numachi/NumachiScene.unity
-    guid: 3549cbc68bb24e04ea208a11a762e221
+    path: Assets/Game/NewSelectScene.unity
+    guid: baf84855f8ef7894386f9dbead767be4
   - enabled: 1
     path: Assets/Game/NewExplanationScene.unity
     guid: 9ee03f0db57030d489a8a748accd6075
+  - enabled: 1
+    path: Assets/Numachi/NumachiScene.unity
+    guid: 3549cbc68bb24e04ea208a11a762e221
+  - enabled: 1
+    path: Assets/Game/NewResultScene.unity
+    guid: 623ad480905fff24aab1b6ccca46741d
   - enabled: 1
     path: Assets/Game/NewResultScene2.unity
     guid: 521203a84e399464c9f978fee66db437
